@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hospital SYSTEM "hospital.dtd">
+<?xml-stylesheet type="text/xsl" href="main.xsl"?>
+<hospital xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="http://www.example.org/hospital"
+          xsi:schemaLocation="http://www.example.org/hospital hospital.xsd">
+    <departments>
+        <department id="1">
+            <name>Cardiology</name>
+            <staffCount>25</staffCount>
+        </department>
+        <department id="2">
+            <name>Neurology</name>
+            <staffCount>15</staffCount>
+        </department>
+    </departments>
+    <patients>
+        <patient id="101">
+            <name>John Doe</name>
+            <age>45</age>
+            <admissionDate>2024-08-01</admissionDate>
+        </patient>
+        <patient id="102">
+            <name>Jane Smith</name>
+            <age>32</age>
+            <admissionDate>2024-08-03</admissionDate>
+        </patient>
+    </patients>
+    <appointments>
+        <appointment id="1001">
+            <patientId>101</patientId>
+            <departmentId>1</departmentId>
+            <date>2024-08-10</date>
+        </appointment>
+        <appointment id="1002">
+            <patientId>102</patientId>
+            <departmentId>2</departmentId>
+            <date>2024-08-11</date>
+        </appointment>
+    </appointments>
+</hospital>

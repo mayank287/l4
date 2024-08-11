@@ -1,0 +1,19 @@
+<!ELEMENT hospital (departments, patients, appointments)>
+<!ELEMENT departments (department+)>
+<!ELEMENT department (name, staffCount)>
+<!ATTLIST department id ID #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT staffCount (#PCDATA)>
+
+<!ELEMENT patients (patient+)>
+<!ELEMENT patient (name, age, admissionDate)>
+<!ATTLIST patient id ID #REQUIRED>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT admissionDate (#PCDATA)>
+
+<!ELEMENT appointments (appointment+)>
+<!ELEMENT appointment (patientId, departmentId, date)>
+<!ATTLIST appointment id ID #REQUIRED>
+<!ELEMENT patientId (#PCDATA)>
+<!ELEMENT departmentId (#PCDATA)>
+<!ELEMENT date (#PCDATA)>

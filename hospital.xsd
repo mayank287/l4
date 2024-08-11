@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.example.org/hospital"
+           targetNamespace="http://www.example.org/hospital"
+           elementFormDefault="qualified">
+
+    <!-- Define complex types for elements -->
+    <xs:element name="hospital">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="departments">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="department" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="name" type="xs:string"/>
+                                        <xs:element name="staffCount" type="xs:integer"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:ID" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="patients">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="patient" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="name" type="xs:string"/>
+                                        <xs:element name="age" type="xs:positiveInteger"/>
+                                        <xs:element name="admissionDate" type="xs:date"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:ID" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="appointments">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="appointment" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="patientId" type="xs:IDREF"/>
+                                        <xs:element name="departmentId" type="xs:IDREF"/>
+                                        <xs:element name="date" type="xs:date"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:ID" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
